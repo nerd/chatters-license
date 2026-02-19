@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "chatters-license",
+  "version": "${version}",
+  "name": "Chatters' License",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/chatters-license/icon.png",
+  "environment": "client",
+  "entrypoints": {
+  },
+  "mixins": [
+    "chatters-license.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": ">=1.16.4"
+  }
+}

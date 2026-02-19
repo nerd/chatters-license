@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "io.github.nerd.license.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "LegacyUserPropertiesSpoofer",
+    "UserPropertiesSpoofer"
+  ],
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
