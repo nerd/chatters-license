@@ -24,6 +24,6 @@ public class UserPropertiesSpoofer {
             )
     )
     private ImmutableSet<UserApiService.UserFlag> redirectFlagSetBuild(ImmutableSet.Builder<UserApiService.UserFlag> instance) {
-        return GOOD_FLAGS;
+        return instance.addAll(GOOD_FLAGS).build();
     }
 }
