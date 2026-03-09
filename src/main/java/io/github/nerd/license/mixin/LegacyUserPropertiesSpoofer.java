@@ -1,23 +1,29 @@
 package io.github.nerd.license.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@SuppressWarnings("OverwriteAuthorRequired")
-@Mixin(targets = "com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService", remap = false)
+// because the Minecraft version we are using is too high, these mixin targets will not resolve
+@SuppressWarnings("UnresolvedMixinReference")
+@Mixin(
+        targets = "com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService",
+        remap = false
+)
 public class LegacyUserPropertiesSpoofer {
-    @Overwrite
-    public boolean serversAllowed() {
-        return true;
+    @Inject(method = "serversAllowed", at = @At("HEAD"), cancellable = true)
+    private void allowServers(CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(true);
     }
 
-    @Overwrite
-    public boolean realmsAllowed() {
-        return true;
+    @Inject(method = "realmsAllowed", at = @At("HEAD"), cancellable = true)
+    private void allowRealms(CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(true);
     }
 
-    @Overwrite
-    public boolean chatAllowed() {
-        return true;
+    @Inject(method = "chatAllowed", at = @At("HEAD"), cancellable = true)
+    private void allowChat(CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(true);
     }
 }
