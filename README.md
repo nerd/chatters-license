@@ -13,6 +13,7 @@ This mod has explicitly been tested on the following versions:
 - 1.20.6
 - 1.21.11
 - 26.1-snapshot-9
+- 26.3
 
 ## Dependencies
 

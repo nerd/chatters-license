@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static com.mojang.authlib.minecraft.UserApiService.UserFlag.*;
 
-@Mixin(targets = "com.mojang.authlib.yggdrasil.YggdrasilUserApiService", remap = false)
+@Mixin(targets = {"com.mojang.authlib.yggdrasil.YggdrasilUserApiService", "com.mojang.authlib.services.MinecraftServicesUserApiService"}, remap = false)
 public class UserPropertiesSpoofer {
     @Unique
     private static final ImmutableSet<UserApiService.UserFlag> GOOD_FLAGS = ImmutableSet.of(
